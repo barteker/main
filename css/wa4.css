@@ -64,7 +64,66 @@ html {
     color: bisque;
 }
 
-article img    {
+.card article img    {
+    float: right;
+    max-height: 100%;
+}
+
+/* Styling for the card as a whole */
+.card2 {
+    width: 35em;
+    height: 22em;
+    margin: 5em auto;
+    background-color: rgb(89, 128, 90);
+    border: 0.2em solid black;
+    border-radius: 1.5em;
+}
+
+.card2 h2 {
+    margin: 0em;
+    line-height: 1.5em;
+    font-size: 2em;
+
+}
+
+.card2 p {
+    margin: 0em;
+}
+
+/* Styling for name */
+.card2 header {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+    border-radius: 1.5em 1.5em 0 0;
+    height: 3em;
+    padding: 1em;
+}
+
+/* Styling for footer text */
+.card2 footer {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+    border-radius: 0 0 1.5em 1.5em;
+    height: 3em;
+    padding: 1em;
+
+}
+
+.card2 footer p {
+    font-size: 1.5em;
+    line-height: 2em;
+
+}
+
+.card2 article {
+    height: 12em;
+    background-color: rgb(0 0 0 / 0.1);
+}
+
+.card2 article p {
+    padding: 1em;
+    color: bisque;
+}
+
+.card2 article img {
     float: right;
     max-height: 100%;
 }
