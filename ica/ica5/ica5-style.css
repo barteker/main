@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #fff;
+    background-image: linear-gradient(rgba(85, 85, 85, 0.3), transparent 20%, transparent 80%, RGBA(85, 85, 85, .3)), url(top-image.png), url(bottom-image.png);
+    background-position: top, top center, bottom center;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 800px, auto, auto;
+    border-style: solid;
+    border-width: 1mm, 0mm;
+    border-color: red;
+    
+
+    
+}
+
+article {
+    width: 210mm;
+    height: 297mm;
+    margin: 20px auto;
+    position: relative;
+}
+
+address {
+    position: absolute;
+    bottom: 8mm;
+    right: 20mm;
+}
+
+h1 {
+    
+
+    
+    
+    position: absolute;
+    top: 12mm;
+    left: 20mm;
+    width: 128px;
+    height: 128px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 44px 0;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    background-image: url(logo.png);
+    filter: drop-shadow(5px 5px 5px black);
+
+}
+
+/* Your CSS below here */
