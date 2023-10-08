@@ -1,3 +1,59 @@
-img {
+/* body {
+    background-image: url(../img/fooball.jpeg);
+    background-repeat: no-repeat;
     max-width: 100%;
+} */
+
+
+
+img {
+    max-height: 100%;
 }
+
+#background {
+    width: 100%;
+}
+
+#overlay {
+    background-color: rgba(255, 255, 255, 0.3);
+    position: fixed;
+    margin-top: 5%;
+    margin-left: 10%;
+    display: flex;
+    align-items: center;
+}
+
+#bills-flag {
+    height: 30px;
+}
+
+#bills {
+    width: 3em;
+    padding: 5%;
+    text-align: right;
+    background-image: linear-gradient(to right, rgba(0,0,255,0.1), rgba(0, 0, 255, .6));
+
+}   
+
+#chiefs {
+    width: 3em;
+    padding: 5%;
+    text-align: left;
+    float: right;
+    background-image: linear-gradient(to right, rgba(255, 0, 0, .6), rgba(255, 0, 0, 0.1));
+}   
+
+#cheifs-flag {
+    height: 30px;
+    float: right;
+}
+
+
+
+#bills, #chiefs {
+    font-family: sans-serif;
+    font-weight: bold;
+    color: white;
+
+}
+
