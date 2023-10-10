@@ -1,6 +1,22 @@
 body {
     background-color: beige;
 }
+#box1 {
+    border-style: solid;
+    width: 40vw;
+    height: 33vh;
+    border-color: rgba(20, 250, 173, 10);
+    border-width: 3px;
+    border-radius: 10px;
+    background-color: mediumseagreen;
+    position: relative;
+}
+
+#text1 {
+    left: 150%;
+    top: 250px;
+    position: relative;
+}
 
 #box2 {
     width: 73vw;
@@ -14,22 +30,6 @@ body {
     left: 0;
     /* position: relative;
     left: 40vw; */
-}
-#box1 {
-    border-style: solid;
-    width: 40vw;
-    height: 33vh;
-    border-color: rgba(20, 250, 173, 10);
-    border-width: 3px;
-    border-radius: 10px;
-    background-color: mediumseagreen;
-    position: fixed;
-}
-
-#text1 {
-    left: 150%;
-    top: 250px;
-    position: relative;
 }
 
 
