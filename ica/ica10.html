@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript!!!</title>
+    <style>
+      button {
+        background-color: purple;
+        border-radius: 15px;
+        color: white;
+        font-family: sans-serif;
+        cursor: pointer;
+      }
+      div {
+        font-family: Arial, Helvetica, sans-serif;
+        color: yellowgreen;
+        font-weight: bold;
+        display: flex;
+        flex-wrap: wrap-reverse;
+
+      }
+      div p {
+        padding: 20px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <button>Generate</button>
+    <div id="div1"></div>
+    <button id="button2">WeeWoo</button>
+    <script>
+      const button = document.querySelector("button");
+
+      button.addEventListener("click", generateGarbage);
+
+      function generateGarbage() {
+        let r = (Math.random() + 1).toString(36).substring(7);
+        console.log("random", r);
+        const para = document.createElement("p");
+        const node = document.createTextNode(r);
+        para.appendChild(node);
+
+        const element = document.getElementById("div1");
+        element.appendChild(para);
+
+        const button2 = document.getElementById("button2");
+
+        button2.addEventListener("mouseover", murder)
+
+        function murder() {
+            document.querySelector("p").style.color = "red";
+            setTimeout(delay, 5000);
+            
+        }
+        
+        function delay () {}
+
+
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    background-color: rgb(180, 180, 180);
+    font-family: 'URW DIN', 'Alte DIN 1451', 'D-DIN', 'Barlow', sans-serif;
+}
+
+nav {
+    margin: 0;
+    position: sticky;
+    background-color: black;
+    top: 0;
+    font-family: 'Optima', sans-serif;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+}
+
+#Title {
+
+    font-size: 2.5rem;
+    padding: 1rem;
+    flex: auto;
+    color: white;
+    text-decoration: none;
+}
+
+#Title:hover {
+
+    color: rgb(191, 179, 4);
+}
+
+
+#Schedule {
+
+    font-size: 2rem;
+    padding: 1rem;
+    padding-top: 1.5rem;
+    flex: content;
+    color: white;
+    text-align: right;
+    text-decoration: none;
+}
+
+#Schedule:hover {
+
+    color: rgb(191, 179, 4);
+}
+
+
+#Intro {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 2rem;
+    width: 60%;
+
+}
+
+#Intro p {
+    margin: 2rem;
+}
+
+#One {
+    flex: 4;
+}
+
+#Two {
+    flex: 6;
+}
+
+#ScheduleHeader {
+    font-size: 3rem;
+    font-family: 'Optima', sans-serif;
+
+    display: flex;
+    justify-content: center;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    background-image: linear-gradient(rgb(180,180,180), white);
+    /* text-decoration: underline; */
+}
+
+#Entry {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    background-color: white;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.performer {
+    color: rgb(191, 179, 4);
+    font-weight: bolder;
+    padding: 5px;
+}
+
+.performerIn {
+    color: rgb(191, 179, 4);
+    font-weight: bolder;
+    padding: 5px;
+    padding-left: 15px;
+    
+}
+
+.performers {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.composer {
+    padding: 5px;
+    font-weight: bold;
+}
+
+.date {
+    padding: 15px;
+    margin: 1;
+    background-color: gray;
+    color: rgb(191, 179, 4);
+    white-space: nowrap;
+    font-size: 2rem;
+    writing-mode:vertical-rl;
+
+}
+
+.content {
+    padding: 15px;
+
+}
+
+.title {
+    font-family: 'URW DIN', 'Alte DIN 1451', 'D-DIN', 'Barlow', sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    word-break: keep-all;
+
+}
+
+.copy {
+    white-space: pre-wrap;
+    font-family: 'URW DIN', 'Alte DIN 1451', 'D-DIN', 'Barlow', sans-serif;
+    font-size: 1rem;
+}
