@@ -94,7 +94,7 @@ nav {
   background-color: white;
 }
 
-#Entry {
+.entry {
   display: flex;
   flex-direction: row;
   padding: 2rem;
