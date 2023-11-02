@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Silly story generator</title>
+
+    <style>
+        body {
+            font-family: helvetica, sans-serif;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 2vw;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            font-size: 2vw;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        div {
+            padding-bottom: 20px;
+            justify-content: center;
+            margin: auto;
+            display: flex;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            width: 150px;
+        }
+
+        p {
+            background: #ffc125;
+            border-radius: 10px;
+            color: #5e2612;
+            padding: 10px;
+            visibility: hidden;
+            width: 40%;
+            justify-content: center;
+            margin: auto;
+        }
+
+        @media screen and (max-width: 900px) {
+            body {
+                font-size: 16px;
+            }
+            button {
+                font-size: 16px;
+            }
+            p {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nameBox">
+        <label for="customname">Enter custom name:</label>
+        <input id="customname" type="text" placeholder="" />
+    </div>
+    <div id="checkContainer">
+        <label for="us">US</label><input id="us" type="radio" name="ukus" value="us" checked />
+        <label for="uk">UK</label><input id="uk" type="radio" name="ukus" value="uk" />
+    </div>
+    <div>
+        <button class="randomize">Generate random story</button>
+    </div>
+    <!-- Thanks a lot to Willy Aguirre for his help with the code for this assessment -->
+    <p class="story"></p>
+
+    <script>
+        const customName = document.getElementById('customname');
+        const randomize = document.querySelector('.randomize');
+        const story = document.querySelector('.story');
+
+        const storyText = `It was 94 fahrenheit outside, so :insertx: went for a jog. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.`;
+        const insertX = ['Willy Gobbler', 'Dad Bigdy', 'Danny Rankin'];
+        const insertY = ['your mom`s house', 'your dad`s house', 'the ATLAS Building'];
+        const insertZ = ['morphed into gelatinous fluid', 'slowly ascended into the sky', 'repeatedly bashed their head against walls'];
+
+        function randomValueFromArray(array) {
+            const random = Math.floor(Math.random() * array.length);
+            return array[random];
+        }
+
+        randomize.addEventListener('click', result);
+
+        function result() {
+            let newStory = storyText;
+            const xItem = randomValueFromArray(insertX);
+            const yItem = randomValueFromArray(insertY);
+            const zItem = randomValueFromArray(insertZ);
+
+            newStory = newStory.replace(':insertx:', xItem);
+            newStory = newStory.replace(':insertx:', xItem);
+            newStory = newStory.replace(':inserty:', yItem);
+            newStory = newStory.replace(':insertz:', zItem);
+
+            if (customName.value !== '') {
+                const name = customName.value;
+                newStory = newStory.replace('Bob', name);
+
+            }
+
+            if (document.getElementById("uk").checked) {
+                const weight = Math.round(300 * 0.0714286) + ' stone';
+                const temperature = Math.round((94 - 32) / 1.8) + ' centigrade';
+                newStory = newStory.replace('300 pounds', weight);
+                newStory = newStory.replace('94 fahrenheit', temperature);
+
+            }
+
+            story.textContent = newStory;
+            story.style.visibility = 'visible';
+        }
+    </script>
+
+</body>
+
+
+
+</html>
