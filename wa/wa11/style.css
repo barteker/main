@@ -1,0 +1,52 @@
+h1 {
+  font-family: helvetica, arial, sans-serif;
+  text-align: center;
+  font-size: 3vw;
+}
+
+body {
+  width: 640px;
+  margin: 0 auto;
+  background-color: bisque;
+}
+
+.full-img {
+  position: relative;
+  display: block;
+  width: 640px;
+  height: 359.461px;
+}
+
+.full-img img {
+  min-width: 640px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 640px;
+  height: 359.461px;
+  background-color: rgba(0,0,0,0);
+}
+
+button {
+  border: 0;
+  background: rgba(150,150,150,0.8);
+  text-shadow: .5px .5px .5px bisque;
+  border: 1px solid #999;
+  border-radius: 1px;
+  position: absolute;
+  cursor: pointer;
+  top: 2px;
+  left: 2px;
+  font-family: helvetica, arial, sans-serif;
+}
+
+.thumb-bar img {
+  display: block;
+  width: 18%;
+  float: left;
+  cursor: pointer;
+  margin: 1%;
+}
