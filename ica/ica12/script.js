@@ -1,4 +1,4 @@
-const newBtn = document.querySelector('#js-new-quote').addEventListener('click', getQuote);
+const triviaBtn = document.querySelector('#js-new-quote').addEventListener('click', getQuote);
 const answerBtn = document.querySelector('#js-tweet').addEventListener('click', displayAnswer);
 
 const questionTxt = document.querySelector('#js-quote-text');
