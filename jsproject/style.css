@@ -12,11 +12,20 @@ h1 {
     padding: 5px 15px;
 }
 
-.button {
-    border: none;
-    
+#resetButton, #submitButton {
+    position:absolute;
+    top: 8.25vw;
+    left: 16vw;
+    height: 2vw;
+    font-size: 1.5vw;
+}
+
+#submitButton {
+    left: 22vw;
 }
 
 .button {
     position: absolute;
+    border: none;
+    border-radius: 6px;
 }

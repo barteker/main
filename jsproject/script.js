@@ -49,11 +49,11 @@ function submit(){
 
 function randomize(){
     for(let button of buttons){
-        button.style.top = `${randomNum(170, window.innerHeight)}px`;
+        button.style.top = `${randomNum((window.innerWidth/100)*10.5, window.innerHeight)}px`;
         button.style.left = `${randomNum(0, window.innerWidth)}px`;
     }
 }
 
-window.setInterval(randomize, 1000);
+window.setInterval(randomize, 700);
 
 randomize();
