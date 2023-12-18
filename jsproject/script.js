@@ -44,7 +44,7 @@ function reset(){
 }
 
 function submit(){
-    window.open(`mailto:baba5376@colorado.edu?subject=gimme ur number&body=Hello Bart,/n/nMy phone number is ${output.textContent}. I want you to have it SO SO BAD that I spent forever clicking those godforsaken escapist numbers./n/nYou’re the best web student ever and I don’t see any reason why you wouldn’t get an A on this project./n/nYours,/n[Insert Name Here]`);
+    window.open(`mailto:baba5376@colorado.edu?subject=gimme ur number&body=Hello Bart,\n\nMy phone number is ${output.textContent}. I want you to have it SO SO BAD that I spent forever clicking those godforsaken escapist numbers.\n\nYou’re the best web student ever and I don’t see any reason why you wouldn’t get an A on this project.\n\nYours,\n[Insert Name Here]`);
 }
 
 function randomize(){
