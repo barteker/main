@@ -49,7 +49,7 @@ function submit(){
 
 function randomize(){
     for(let button of buttons){
-        button.style.top = `${randomNum(100, 2000)}px`;
+        button.style.top = `${randomNum(170, 2000)}px`;
         button.style.left = `${randomNum(0, 3000)}px`;
     }
 }
