@@ -4,17 +4,17 @@ html {
 
 h1 {
     font-size: 2.75vw;
-    padding: 5px 15px;
+    padding: .5vw 15px;
 }
 
 .output {
     font-size: 1.75vw;
-    padding: 5px 15px;
+    padding: .5vw 15px;
 }
 
 #resetButton, #submitButton {
     position:absolute;
-    top: 8.25vw;
+    top: 8.5vw;
     left: 16vw;
     height: 2vw;
     font-size: 1.5vw;
