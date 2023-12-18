@@ -54,6 +54,6 @@ function randomize(){
     }
 }
 
-window.setInterval(randomize, 700);
+window.setInterval(randomize, 800);
 
 randomize();
