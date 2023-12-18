@@ -44,13 +44,13 @@ function reset(){
 }
 
 function submit(){
-    window.open(`mailto:baba5376@colorado.edu?subject=gimme ur number&body=Hello Bart,\n\nMy phone number is ${output.textContent}. I want you to have it SO SO BAD that I spent forever clicking those godforsaken escapist numbers.\n\nYou’re the best web student ever and I don’t see any reason why you wouldn’t get an A on this project.\n\nYours,\n[Insert Name Here]`);
+    window.open(`mailto:baba5376@colorado.edu?subject=gimme ur number&body=Hello Bart,%0D%0A%0D%0AMy phone number is ${output.textContent}. I want you to have it SO SO BAD that I spent forever clicking those godforsaken escapist numbers.%0D%0A%0D%0AYou’re the best web student ever and I don’t see any reason why you wouldn’t get an A on this project.%0D%0A%0D%0AYours,%0D%0A[Insert Name Here]`);
 }
 
 function randomize(){
     for(let button of buttons){
-        button.style.top = `${randomNum(170, 2000)}px`;
-        button.style.left = `${randomNum(0, 3000)}px`;
+        button.style.top = `${randomNum(170, window.innerHeight)}px`;
+        button.style.left = `${randomNum(0, window.innerWidth)}px`;
     }
 }
 
