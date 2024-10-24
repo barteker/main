@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Clash Grotesk';
+    src: url('../fonts/ClashGrotesk/ClashGrotesk-Variable.ttf');
+    
+}
+
+body {
+    background-color: #fbf5ff;
+    font-family: 'Clash Grotesk', sans-serif;
+}
+
+.mainName {
+    text-align: center;
+}
