@@ -1,14 +1,333 @@
 @font-face {
     font-family: 'Clash Grotesk';
-    src: url('../fonts/ClashGrotesk/ClashGrotesk-Variable.ttf');
-    
+    src: url('../fonts/homepageFonts/ClashGrotesk-Variable.ttf');
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aktura';
+    src: url('../fonts/homepageFonts/Aktura-Regular.otf');
+    font-weight: normal;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Chillax';
+    src: url('../fonts/homepageFonts/Chillax-Variable.ttf');
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nippo';
+    src: url('../fonts/homepageFonts/Nippo-Regular.otf');
+    font-weight: normal;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cabinet Grotesk';
+    src: url('../fonts/homepageFonts/CabinetGrotesk-Variable.ttf');
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Array';
+    src: url('../fonts/homepageFonts/Array-Regular.otf');
+    font-weight: normal;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PubliFluorChrystelise';
+    src: url('../fonts/homepageFonts/PubliFluorChrystelise.otf');
+    font-weight: normal;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Polsku';
+    src: url('../fonts/homepageFonts/Polsku.ttf');
+    font-weight: normal;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sans Guilt Wafer';
+    src: url('../fonts/homepageFonts/SansGuiltWafer.otf');
+    font-weight: normal;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Terminal Grotesque';
+    src: url('../fonts/homepageFonts/terminal-grotesque_open.otf');
+    font-weight: normal;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bocalupo';
+    src: url('../fonts/homepageFonts/Bocalupo-Regular.otf');
+    font-weight: normal;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Young Serif';
+    src: url('../fonts/homepageFonts/YoungSerif-Regular.ttf');
+    font-weight: normal;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sniglet';
+    src: url('../fonts/homepageFonts/Sniglet-Regular.ttf');
+    font-weight: normal;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'jgs Font';
+    src: url('../fonts/homepageFonts/jgs_Font.ttf');
+    font-weight: normal;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/homepageFonts/Poppins-VariableFont_wght.ttf');
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+}
+
+
+
+:root {
+    --text-color: #000000;
+    --bg-color: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: #fbf5ff;
     font-family: 'Clash Grotesk', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 1rem;
+    min-height: 100vh;
+    display: flex;
+    overflow: auto;
 }
 
-.mainName {
+.side-nav {
+    flex: 1;
+    font-family: 'Clash Grotesk', sans-serif;
+    left: 1rem;
+
+    height: auto;
+    transition: all 0.3s ease
+}
+
+/* .side-nav.sticky {
+    flex: 1;
+    top: 2rem;
+    transform: none;
+} */
+
+.sticky {
+    position: -webkit-sticky;
+    /* for Safari */
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+
+
+}
+
+.side-nav ul {
+    list-style: none;
+
+    text-orientation: mixed;
+}
+
+.side-nav li {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    margin: 2rem 0;
+}
+
+.side-nav a {
+    text-decoration: none;
+    font-family: 'Clash Grotesk', sans-serif;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.side-nav a:hover {
+    font-size: 2rem;
+    color: #FF6F00;
+    transition: all 0.3s ease;
+}
+
+main {
+    flex: 6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.title {
+    padding: none;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: normal;
+    margin-bottom: 4rem;
     text-align: center;
+    transition: font-family 0.1s ease;
+    min-height: 1.2em;
+    width: 100%;
+    max-width: 800px;
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+
+.title:hover {
+    cursor: default;
+}
+
+.intro {
+    margin-top: 90%;
+    max-width: 600px;
+    margin-left: 6vw;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.bio {
+    max-width: 600px;
+    margin-left: 6vw;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.profile-image {
+    margin: 4rem 0;
+    width: 70vw;
+    margin-left: 6vw;
+}
+
+.profile-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.boulder-co {
+    align-self: flex-start;
+    flex: 1;
+    padding-top: 40vh;
+    font-family: 'Clash Grotesk', sans-serif;
+    font-size: 1.5rem;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transition: all 0.3s ease;
+}
+
+footer {
+    font-family: 'Clash Grotesk', sans-serif;
+    padding-top: 5rem;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}
+
+.font-credits {
+    top: 0;
+    left: 0;
+    right: 0;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    text-align: center;
+    color: #666666;
+    z-index: 100;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .side-nav {
+        height: auto;
+    }
+
+    .side-nav ul {
+        writing-mode: horizontal-tb;
+        transform: none;
+        padding: 2rem 0;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .side-nav li {
+        margin: 0;
+        padding: 1rem 0;
+    }
+
+    .boulder-co {
+    align-self: flex-start;
+        flex: 1;
+        padding-top: 40vh;
+        font-family: 'Clash Grotesk', sans-serif;
+        font-size: 1.5rem;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        transition: all 0.3s ease;
+    }
+
+    footer {
+        position: static;
+        margin-top: 4rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .font-credits {
+        position: static;
+        margin-top: 2rem;
+    }
 }
