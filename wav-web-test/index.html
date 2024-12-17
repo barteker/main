@@ -1,75 +1,92 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Spotify Web Playback SDK Quick Start</title>
-  </head>
-  <body>
-    <h1>Spotify Web Playback SDK Quick Start</h1>
-    <script src="https://sdk.scdn.co/spotify-player.js"></script>
-    <script>
-              window.onSpotifyWebPlaybackSDKReady = () => {
-        const token = 'BQCp6Qr-5Z_Ueg-cXvcYO033Kb1gMYiXbnG_yRVOO2D3SGpljn0qtoV_AUoNkZ-GgUZBCU7dOAXvFp5fwBsV8TUUSUlvPAPOwQA9GaAmNXJMH7LgeQ_FiOHpDe7LDVuq0VUiChKWvdSZHraJAkGAYBIoO6RNSkak_WY0p_hbGy8JjAwoH71C7FFUHqtqmwrUSxscR5om7raDM_4';
-        const player = new Spotify.Player({
-          name: 'W/AV Test Player',
-          getOAuthToken: cb => { cb(token); },
-          volume: 0.5
-        });
 
-          // Ready
-        player.addListener('ready', ({ device_id }) => {
-          console.log('Ready with Device ID', device_id);
-        });
+<head>
+  <title>W/AV Test</title>
+</head>
 
-        // Not Ready
-        player.addListener('not_ready', ({ device_id }) => {
-          console.log('Device ID has gone offline', device_id);
-        });
+<body>
+  <h1>W/AV Test</h1>
+  <script src="https://sdk.scdn.co/spotify-player.js"></script>
+  <script>
+    window.onSpotifyWebPlaybackSDKReady = () => {
+      const token = 'BQD1WwRIPRJmJu07FrUiiunbYmUoFSERWIkPilvHcy7UpVdWgmi-zNvH0NbpIoXHhZ9I8PXlJXof4nDhskI6_slOK7ZzYHjD7KNL5kzuHbY7hT0hOh63-VDNAKUj-fxEm972M3gxDs8g7dG5QCFf6UlCH806Tig6XhMpWWzoDRK-U15tRkQ3TapRYsBQ7JGLPel9K7-tU5PBwt4';
+      const player = new Spotify.Player({
+        name: 'W/AV Test Player',
+        getOAuthToken: cb => { cb(token); },
+        volume: 0.5
+      });
 
-          player.addListener('initialization_error', ({ message }) => {
-            console.error(message);
-        });
+      // Ready
+      player.addListener('ready', ({ device_id }) => {
+        console.log('Ready with Device ID', device_id);
+      });
 
-        player.addListener('authentication_error', ({ message }) => {
-            console.error(message);
-        });
+      // Not Ready
+      player.addListener('not_ready', ({ device_id }) => {
+        console.log('Device ID has gone offline', device_id);
+      });
 
-        player.addListener('account_error', ({ message }) => {
-            console.error(message);
-        });
+      player.addListener('initialization_error', ({ message }) => {
+        console.error(message);
+      });
 
-          player.connect();
+      player.addListener('authentication_error', ({ message }) => {
+        console.error(message);
+      });
 
-      document.getElementById('togglePlay').onclick = function() {
+      player.addListener('account_error', ({ message }) => {
+        console.error(message);
+      });
+
+      player.connect();
+
+      document.getElementById('togglePlay').onclick = function () {
         player.togglePlay();
       };
 
-      document.getElementById('seekForward').onclick = function () { //checks if they clicked on the seek forward button
-        var position_sec = 0; // creates a variable to store position in seconds
+      let seekInterval;
+      let accumulatedSeek = 0; // Variable to accumulate the seek amount
+      const seekAmount = 400; // Seek forward by 400 milliseconds at each interval
+      const seekIntervalTime = 200; // Interval time of 200 milliseconds
+
+      function startSeeking() {
+        accumulatedSeek = 0; // Reset the accumulated seek amount
+        player.pause().then(() => {
+          seekInterval = setInterval(() => {
+            accumulatedSeek += seekAmount; // Accumulate the seek amount
+          }, seekIntervalTime); // Accumulate every 200 milliseconds
+        });
+      }
+
+      function stopSeeking() {
+        clearInterval(seekInterval);
         player.getCurrentState().then(state => {
           if (!state) {
             console.error('User is not playing music through the Web Playback SDK');
             return;
           }
-
-          position_sec = (state.position / 1000); // gets the posiiton in seconds from the state object and converts to seconds from milliseconds
-
+          let position_ms = state.position; // Get the current position in milliseconds
+          let new_position = position_ms + accumulatedSeek; // Calculate the new position
+          player.seek(new_position).then(() => {
+            console.log('Changed position!');
+            return player.resume(); // Chain the resume promise
+          }).then(() => {
+            console.log('Resumed playback!');
+          }).catch(error => {
+            console.error('Error during seek or resume:', error);
+          });
         });
-        
-        position_sec = (state.position / 1000); // gets the posiiton in seconds from the state object and converts to seconds from milliseconds
-
-        player.seek(((position_sec + 10) * 1000)).then(() => {
-          console.log('Changed position!');
-        }); // adds 10 to the seconds then converts back to milliseconds
-
-
-      };
-
-
-
-
       }
-    </script>
-    <button id="togglePlay">Toggle Play</button>
-    <button id="seekForward">Seek Forward</button>
-  </body>
+
+      document.getElementById('seekForward').onmousedown = startSeeking;
+      document.getElementById('seekForward').onmouseup = stopSeeking;
+      document.getElementById('seekForward').onmouseleave = stopSeeking;
+
+    }
+  </script>
+  <button id="togglePlay">Toggle Play</button>
+  <button id="seekForward">Seek Forward</button>
+</body>
+
 </html>
